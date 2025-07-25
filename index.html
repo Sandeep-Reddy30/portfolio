@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandeep Reddy K - Personal Portfolio</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- #MAIN -->
+  <main>
+    <!-- #SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Sandeep Reddy K" width="80">
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="Sandeep Reddy K">SANDEEP REDDY </h1>
+          <p class="title">AI-ML Engineer & Computer Science Student</p>
+          <a href="https://drive.google.com/file/d/1oahF_OJCHL1XdgCDSxA0hT10vnsRPoNH/view?usp=sharing" class="resume-btn" target="_blank">View Resume</a>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:sandeepreddyk32@gmail.com" class="contact-link">sandeepreddyk32@gmail.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+919035300990" class="contact-link">+91 9035300990</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Bengaluru, India</address>
+            </div>
+          </li>
+        </ul>
+        <div class="separator"></div>
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://github.com/Sandeep-Reddy30" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/sandeep-reddy-k-35099a292/" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- #main-content -->
+    <div class="main-content">
+      <!-- #NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Experience</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Achievements</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Skills</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- #ABOUT -->
+      <article class="about active" data-page="about">
+        <header>
+          <h2 class="h2 article-title">About</h2>
+        </header>
+        <div class="animate-section" data-animate="about-text">
+          <section class="about-text">
+            <h3 class="h3">My Journey</h3>
+            <p>
+              As a Computer Science student at REVA University, I've dedicated myself to mastering AI-ML technologies and building solutions that make a real impact. My expertise spans across Python, machine learning pipelines, computer vision, and creating production-ready applications.
+            </p>
+            <p>
+              I'm particularly proud of my work on NeuroScope, an AI-powered medical imaging application that won 2nd place among 95+ teams in a national hackathon. This achievement reflects my commitment to using technology for meaningful purposes.
+            </p>
+            <div style="display: flex; gap: 24px; margin: 24px 0; flex-wrap: wrap;">
+              <div style="text-align:center;">
+                <div style="font-size:2rem; font-weight:600; color:#6c63ff;">8.21</div>
+                <div style="font-size:1rem; color:#888;">Current CGPA</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:2rem; font-weight:600; color:#6c63ff;">2nd</div>
+                <div style="font-size:1rem; color:#888;">Place in National Level Hackathon</div>
+              </div>
+            </div>
+            <div class="focus-area-grid">
+              <div class="focus-area-card">
+                <span style="font-size:1.5rem;">🧠</span>
+                <div>
+                  <strong>AI-ML Research</strong><br>
+                  <span style="font-size:0.97rem;">Deep learning, neural networks, and computer vision</span>
+                </div>
+              </div>
+              <div class="focus-area-card">
+                <span style="font-size:1.5rem;">💻</span>
+                <div>
+                  <strong>Software Development</strong><br>
+                  <span style="font-size:0.97rem;">Full-stack development with Python and modern frameworks</span>
+                </div>
+              </div>
+              <div class="focus-area-card">
+                <span style="font-size:1.5rem;">🏥</span>
+                <div>
+                  <strong>Medical Imaging</strong><br>
+                  <span style="font-size:0.97rem;">AI-powered healthcare solutions and medical analysis</span>
+                </div>
+              </div>
+              <div class="focus-area-card">
+                <span style="font-size:1.5rem;">⚖️</span>
+                <div>
+                  <strong>Legal Tech</strong><br>
+                  <span style="font-size:0.97rem;">AI-driven legal document analysis and automation</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- service -->
+        <div class="animate-section" data-animate="service">
+          <section class="service">
+            <h3 class="h3 service-title">What I'm doing</h3>
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-design.svg" alt="AI-ML icon" width="40">
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">AI-ML Solutions</h4>
+                  <p class="service-item-text">
+                    Building intelligent systems using machine learning, deep learning, and data-driven approaches.
+                  </p>
+                </div>
+              </li>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web development</h4>
+                  <p class="service-item-text">
+                    High-quality development of sites at the professional level.
+                  </p>
+                </div>
+              </li>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Mobile apps</h4>
+                  <p class="service-item-text">
+                    Professional development of applications for iOS and Android.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- positions -->
+        <div class="animate-section" data-animate="positions">
+          <section class="positions">
+            <h3 class="h3">Positions of Responsibility</h3>
+            <ul>
+              <li><strong>Core Member, GLUG Club (Oct 2024 – June 2025):</strong> Organized events, mentored students in emerging technologies, and worked on real-world university projects, focusing on solving faculty-identified challenges and hands-on learning.</li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <!-- #EXPERIENCE -->
+      <article class="resume" data-page="experience">
+        <header>
+          <h2 class="h2 article-title">Experience</h2>
+        </header>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                <a href="https://www.reva.edu.in/" target="_blank">🔗 REVA University</a>
+                <span> Bengaluru</span>
+              </h4>
+              <span>Bachelor of Technology in Computer Science Engineering</span>
+              <span>CGPA: 8.21</span>
+            </li>
+          </ol>
+        </section>
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Internships</h3>
+          </div>
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title"><a href="https://www.globedatasolutions.fastestleads.com/" target="_blank">🔗 Globe Data Solutions</a></h4>
+              <span>July - Dec 2024</span>
+              <p class="timeline-text">
+                As an App Developer at a USA-based company in Texas, I developed custom mobile applications to support exhibitors at 10+ expos across the United States. I collaborated closely with expo organizers and stakeholders to gather tailored requirements and deliver feature-rich, scalable applications.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title"><a href="https://planto.ai/" target="_blank">🔗 Planto.AI</a></h4>
+              <span>Jan - Feb 2025</span>
+              <p class="timeline-text">
+                Worked as a Research Intern at Planto.AI, building an AI Copilot for app to enhance usability and automate user workflows. Designed smart assistant features like real-time notifications and guided user support to boost productivity and engagement.
+              </p>
+            </li>
+          </ol>
+        </section>
+      </article>
+
+      <!-- #PROJECTS -->
+      <article class="portfolio" data-page="projects">
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+        <section class="projects">
+          <ul class="project-list">
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <figure class="project-img">
+                <a href="https://github.com/Sandeep-Reddy30/BRAIN_TUMOR" class="project-item-icon-box" target="_blank">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </a>
+                <a href="https://vimeo.com/1059433645?share=copy" class="project-item-demo-box" target="_blank">
+                  View Demo
+                </a>
+                <img src="./assets/images/neuro-scope.png" alt="Neuro-Scope" loading="lazy">
+              </figure>
+              <h3 class="project-title"><a href="https://github.com/Sandeep-Reddy30/BRAIN_TUMOR" target="_blank">Neuro-Scope: Early Tumor Staging 🔗</a></h3>
+              <p class="project-category">2022 - Present</p>
+              <p class="project-category">Developed an ML-based application for detecting neurological disorders using medical imaging; integrated VR for immersive visualization. Built with Python, Flask, TensorFlow, and OpenCV.</p>
+            </li>
+            <li class="project-item active" data-filter-item data-category="ai">
+              <figure class="project-img">
+                <a href="https://github.com/Sandeep-Reddy30/Legal-AI" class="project-item-icon-box" target="_blank">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </a>
+                <a href="https://vimeo.com/1104583961?share=copy" class="project-item-demo-box" target="_blank">
+                  View Demo
+                </a>
+                <img src="./assets/images/legal.png" alt="Legal AI" loading="lazy">
+              </figure>
+              <h3 class="project-title"><a href="https://github.com/Sandeep-Reddy30/Legal-AI" target="_blank">Legal AI: AI Powered Legal Assistance 🔗</a></h3>
+              <p class="project-category">Nov - Dec 2024</p>
+              <p class="project-category">Developed an AI system for legal document analysis, case prediction, and research automation using NLP, LLMs, and Ollama. Enhanced efficiency with AI chatbots and risk assessment.</p>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- #ACHIEVEMENTS -->
+      <article class="achievements" data-page="achievements">
+        <header>
+         <br><br><h2 class="h2 article-title">Achievements</h2>
+        </header>
+        <section class="achievements-content">
+          <p>
+            I had the incredible opportunity to participate in my first-ever national-level software hackathon at the BLITZ E-SUMMIT, organized by Dayananda Sagar University, Bengaluru, where our team secured <strong> 2nd place out of 95+</strong> competing teams. We developed NeuroScope, an AI-powered medical imaging solution designed for early detection of brain tumors. The journey was intense and rewarding, pushing us to collaborate effectively under pressure, solve real-world healthcare challenges, and implement cutting-edge AI techniques. With valuable mentorship from industry experts and the support of our CSE Director, we navigated critical challenges and turned our vision into a functional and impactful prototype. This experience not only tested our technical and creative limits but also boosted our confidence to explore more national and international hackathons in the future.
+          </p>
+          <figure class="certificate-box">
+            <img src="./assets/images/certificate.jpg" alt="BLITZ E-SUMMIT Hackathon Certificate" loading="lazy">
+          </figure>
+        </section>
+      </article>
+
+      <!-- #SKILLS -->
+      <article class="resume" data-page="skills">
+        <header>
+          <h2 class="h2 article-title">Skills</h2>
+        </header>
+        <section class="skills">
+          <h3 class="h3 skills-title">Technical Skills</h3>
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Python</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Machine Learning</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Computer Vision</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Flask</h5>
+                <data value="75">75%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">TensorFlow</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">C</h5>
+                <data value="65">65%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 65%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Dart</h5>
+                <data value="70">70%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Neural Networks</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Flutter</h5>
+                <data value="75">75%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">SQL</h5>
+                <data value="70">70%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- #CONTACT -->
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+        <section class="contact-info">
+          <h3 class="h3 contact-title">Contact Me</h3>
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+                <a href="mailto:sandeepreddyk32@gmail.com" class="contact-link">sandeepreddyk32@gmail.com</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+                <a href="tel:+919035300990" class="contact-link">+91 9035300990</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+                <address>Bengaluru, India</address>
+              </div>
+            </li>
+          </ul>
+          <div class="separator"></div>
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="https://github.com/Sandeep-Reddy30" class="social-link" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/sandeep-reddy-k-35099a292/" class="social-link" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <!-- custom js link -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
