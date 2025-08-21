@@ -17,6 +17,218 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- font awesome for external link and skill icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- slideshow, button, popup, and skills css -->
+  <style>
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .slideshow-image {
+      width: 100%;
+      display: none;
+      transition: opacity 0.5s ease;
+    }
+    .slideshow-image.active {
+      display: block;
+      opacity: 1;
+    }
+    .project-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .project-button {
+      padding: 8px 16px;
+      background: #6c63ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-button:hover {
+      background: #554bff;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .project-title a {
+      color: #FFD700; /* Gold color for project titles */
+      text-decoration: none;
+    }
+    .project-title a:hover {
+      text-decoration: underline;
+    }
+    .timeline-item .h4 a, .timeline-item .h4 {
+      color: #FFD700; /* Gold color for education titles */
+      text-decoration: none;
+    }
+    .timeline-item .h4 a:hover {
+      text-decoration: underline;
+    }
+    /* Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .popup-content {
+      background: #000000;
+      color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      transform: scale(0.8);
+      animation: scaleIn 0.3s ease-in-out forwards;
+    }
+    .popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+    .popup-close:hover {
+      color: #FFD700;
+    }
+    .popup-content p {
+      margin: 0;
+      font-weight: 300;
+    }
+    .popup-content strong {
+      font-weight: 600;
+      color: #FFD700; /* Gold for emphasis */
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes scaleIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    /* Achievements buttons */
+    .achievement-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .achievement-button {
+      padding: 8px 16px;
+      background: #6c63ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .achievement-button:hover {
+      background: #554bff;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    /* Skills styles */
+    .skills {
+      margin-top: 20px;
+    }
+    .skills-title {
+      margin-bottom: 20px;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f5f5f5;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .skill-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      background: #6c63ff;
+      color: #ffffff;
+    }
+    .skill-item:hover .skill-icon {
+      color: #FFD700;
+    }
+    .skill-icon {
+      font-size: 24px;
+      color: #6c63ff;
+      transition: color 0.3s ease;
+    }
+    .skill-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    /* Social icons */
+    .social-link ion-icon {
+      font-size: 32px; /* Larger icons for GitHub and LinkedIn */
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .social-link:hover ion-icon {
+      color: #FFD700; /* Gold on hover */
+      transform: scale(1.2); /* Slight scale on hover */
+    }
+    .social-link span {
+      margin-left: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: #ffffff;
+    }
+    .social-link:hover span {
+      color: #FFD700; /* Gold on hover for text */
+    }
+    /* Profile picture hover */
+    .avatar-box img {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .avatar-box img:hover {
+      transform: scale(1.1); /* Scale up profile picture on hover */
+    }
+    /* Project list layout */
+    .project-list {
+      display: flex;
+      justify-content: space-between; /* Align projects to opposite ends */
+      gap: 20px;
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+    .project-item {
+      flex: 0 1 45%; /* Each project takes up roughly half the width, with some margin */
+      max-width: 45%;
+    }
+  </style>
 </head>
 
 <body>
@@ -26,11 +238,11 @@
     <aside class="sidebar" data-sidebar>
       <div class="sidebar-info">
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Sandeep Reddy K" width="80">
+          <img src="./assets/images/profile.jpg" alt="Sandeep Reddy K" width="80">
         </figure>
         <div class="info-content">
           <h1 class="name" title="Sandeep Reddy K">SANDEEP REDDY </h1>
-          <p class="title">AI-ML Engineer & Computer Science Student</p>
+          <p class="title">AI-ML Enthusiast & Computer Science Student</p>
           <a href="https://drive.google.com/file/d/1oahF_OJCHL1XdgCDSxA0hT10vnsRPoNH/view?usp=sharing" class="resume-btn" target="_blank">View Resume</a>
         </div>
         <button class="info_more-btn" data-sidebar-btn>
@@ -77,7 +289,7 @@
             </a>
           </li>
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/sandeep-reddy-k-35099a292/" class="social-link" target="_blank">
+            <a href="https://www.linkedin.com/in/sandeep-reddy8/" class="social-link" target="_blank">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
@@ -236,11 +448,24 @@
           <ol class="timeline-list">
             <li class="timeline-item">
               <h4 class="h4 timeline-item-title">
-                <a href="https://www.reva.edu.in/" target="_blank">🔗 REVA University</a>
+                <a href="https://www.reva.edu.in/" target="_blank">REVA University</a>
                 <span> Bengaluru</span>
               </h4>
               <span>Bachelor of Technology in Computer Science Engineering</span>
               <span>CGPA: 8.21</span>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                <a href="https://www.narayanagroup.com/" target="_blank">Narayana PU College</a>
+              </h4>
+              <span>PCMC</span>
+              <span>80%</span>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">
+                <a href="https://seaschool.edu.in/" target="_blank">SEA Primary & High School</a>
+              </h4>
+              <span>84%</span>
             </li>
           </ol>
         </section>
@@ -253,14 +478,14 @@
           </div>
           <ol class="timeline-list">
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title"><a href="https://www.globedatasolutions.fastestleads.com/" target="_blank">🔗 Globe Data Solutions</a></h4>
+              <h4 class="h4 timeline-item-title"><a href="https://www.globedatasolutions.fastestleads.com/" target="_blank">Globe Data Solutions</a></h4>
               <span>July - Dec 2024</span>
               <p class="timeline-text">
                 As an App Developer at a USA-based company in Texas, I developed custom mobile applications to support exhibitors at 10+ expos across the United States. I collaborated closely with expo organizers and stakeholders to gather tailored requirements and deliver feature-rich, scalable applications.
               </p>
             </li>
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title"><a href="https://planto.ai/" target="_blank">🔗 Planto.AI</a></h4>
+              <h4 class="h4 timeline-item-title"><a href="https://planto.ai/" target="_blank">Planto.AI</a></h4>
               <span>Jan - Feb 2025</span>
               <p class="timeline-text">
                 Worked as a Research Intern at Planto.AI, building an AI Copilot for app to enhance usability and automate user workflows. Designed smart assistant features like real-time notifications and guided user support to boost productivity and engagement.
@@ -279,48 +504,69 @@
           <ul class="project-list">
             <li class="project-item active" data-filter-item data-category="machine learning">
               <figure class="project-img">
-                <a href="https://github.com/Sandeep-Reddy30/BRAIN_TUMOR" class="project-item-icon-box" target="_blank">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </a>
-                <a href="https://vimeo.com/1059433645?share=copy" class="project-item-demo-box" target="_blank">
-                  View Demo
-                </a>
-                <img src="./assets/images/neuro-scope.png" alt="Neuro-Scope" loading="lazy">
+                <div class="slideshow-container">
+                  <img src="./assets/images/neuro-scope.png" alt="Neuro-Scope 1" class="slideshow-image active" loading="lazy">
+                  <img src="./assets/images/neuro-scope-2.png" alt="Neuro-Scope 2" class="slideshow-image" loading="lazy">
+                  <img src="./assets/images/neuro-scope-3.png" alt="Neuro-Scope 3" class="slideshow-image" loading="lazy">
+                </div>
               </figure>
-              <h3 class="project-title"><a href="https://github.com/Sandeep-Reddy30/BRAIN_TUMOR" target="_blank">Neuro-Scope: Early Tumor Staging 🔗</a></h3>
+              <h3 class="project-title"><a href="https://github.com/Sandeep-Reddy30/BRAIN_TUMOR" target="_blank">Neuro-Scope: Early Tumor Staging <i class="fas fa-external-link"></i></a></h3>
               <p class="project-category">2022 - Present</p>
               <p class="project-category">Developed an ML-based application for detecting neurological disorders using medical imaging; integrated VR for immersive visualization. Built with Python, Flask, TensorFlow, and OpenCV.</p>
+              <div class="project-buttons">
+                <a href="https://vimeo.com/1059433645?share=copy" class="project-button" target="_blank">VIEW DEMO</a>
+                <a href="#" class="project-button" onclick="showPopup('neuroscope')">INFO</a>
+              </div>
             </li>
             <li class="project-item active" data-filter-item data-category="ai">
               <figure class="project-img">
-                <a href="https://github.com/Sandeep-Reddy30/Legal-AI" class="project-item-icon-box" target="_blank">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </a>
-                <a href="https://vimeo.com/1104583961?share=copy" class="project-item-demo-box" target="_blank">
-                  View Demo
-                </a>
-                <img src="./assets/images/legal.png" alt="Legal AI" loading="lazy">
+                <div class="slideshow-container">
+                  <img src="./assets/images/legal.png" alt="Legal AI 1" class="slideshow-image active" loading="lazy">
+                  <img src="./assets/images/legal-2.png" alt="Legal AI 2" class="slideshow-image" loading="lazy">
+                  <img src="./assets/images/legal-3.png" alt="Legal AI 3" class="slideshow-image" loading="lazy">
+                </div>
               </figure>
-              <h3 class="project-title"><a href="https://github.com/Sandeep-Reddy30/Legal-AI" target="_blank">Legal AI: AI Powered Legal Assistance 🔗</a></h3>
+              <h3 class="project-title"><a href="https://github.com/Sandeep-Reddy30/Legal-AI" target="_blank">Legal AI: AI Powered Legal Assistance <i class="fas fa-external-link"></i></a></h3>
               <p class="project-category">Nov - Dec 2024</p>
               <p class="project-category">Developed an AI system for legal document analysis, case prediction, and research automation using NLP, LLMs, and Ollama. Enhanced efficiency with AI chatbots and risk assessment.</p>
+              <div class="project-buttons">
+                <a href="https://vimeo.com/1104583961?share=copy" class="project-button" target="_blank">VIEW DEMO</a>
+                <a href="#" class="project-button" onclick="showPopup('legalai')">INFO</a>
+              </div>
             </li>
           </ul>
         </section>
       </article>
 
+      <!-- Popups -->
+      <div id="neuroscope-popup" class="popup">
+        <div class="popup-content">
+          <span class="popup-close" onclick="closePopup('neuroscope')">&times;</span>
+          <p>🧠 <strong>NeuroScope</strong> is an intelligent, AI-driven application designed to detect neurological disorders from medical imaging with remarkable precision. Built using the <strong>U-Net Convolutional Neural Network (CNN)</strong> architecture, it achieved an outstanding <strong>92.4% accuracy</strong> 🎯 in image segmentation and diagnosis. By harnessing the power of deep learning and computer vision, <strong>NeuroScope</strong> transforms complex brain scans into actionable insights ⚡. This innovation not only accelerates clinical workflows ⏱️ but also enhances diagnostic reliability . With its seamless fusion of technology and healthcare, <strong>NeuroScope</strong> demonstrates how cutting-edge AI can revolutionize medical imaging and empower doctors with life-saving decisions 🌍.</p>
+        </div>
+      </div>
+      <div id="legalai-popup" class="popup">
+        <div class="popup-content">
+          <span class="popup-close" onclick="closePopup('legalai')">&times;</span>
+          <p>⚖️ <strong>LEGAL AI</strong> is a cutting-edge research tool built to transform legal document analysis and decision-making. Using <strong>Large Language Models (LLMs)</strong>, <strong>LangChain</strong>, <strong>LLaMA</strong>, and <strong>Retrieval-Augmented Generation (RAG)</strong>, it streamlines legal document review, precedent matching, case prediction, and risk assessment, significantly enhancing efficiency ⚡. The system integrates <strong>AI chatbots</strong> 🤖 for seamless legal assistance, enabling faster and more reliable insights for professionals. Currently, I am fine-tuning the model with <strong>Mistral</strong>, boosting domain-specific accuracy 📈 and contextual understanding in complex legal processing. <strong>LEGAL AI</strong> showcases how AI-powered innovation can modernize law practice and empower smarter, data-driven decisions 📚.</p>
+        </div>
+      </div>
+
       <!-- #ACHIEVEMENTS -->
       <article class="achievements" data-page="achievements">
         <header>
-         <br><br><h2 class="h2 article-title">Achievements</h2>
+          <h2 class="h2 article-title"><br>Achievements</h2>
         </header>
         <section class="achievements-content">
-          <p>
-            I had the incredible opportunity to participate in my first-ever national-level software hackathon at the BLITZ E-SUMMIT, organized by Dayananda Sagar University, Bengaluru, where our team secured <strong> 2nd place out of 95+</strong> competing teams. We developed NeuroScope, an AI-powered medical imaging solution designed for early detection of brain tumors. The journey was intense and rewarding, pushing us to collaborate effectively under pressure, solve real-world healthcare challenges, and implement cutting-edge AI techniques. With valuable mentorship from industry experts and the support of our CSE Director, we navigated critical challenges and turned our vision into a functional and impactful prototype. This experience not only tested our technical and creative limits but also boosted our confidence to explore more national and international hackathons in the future.
-          </p>
-          <figure class="certificate-box">
-            <img src="./assets/images/certificate.jpg" alt="BLITZ E-SUMMIT Hackathon Certificate" loading="lazy">
-          </figure>
+          <p>🏆 Secured <strong>2nd place</strong> among <strong>95+ teams</strong> at the <strong>BLITZ Hackathon</strong>, <strong>Dayananda Sagar College</strong>, for developing <strong>NeuroScope</strong>, an <strong>AI-powered</strong> project focused on <strong>early tumor staging</strong> using <strong>deep learning</strong> and <strong>U-Net CNN</strong>. Currently in the process of securing <strong>copyright protection</strong>, showcasing <strong>innovation</strong>, <strong>research excellence</strong>, and <strong>real-world healthcare impact</strong>.</p>
+          <div class="achievement-buttons">
+            <a href="https://drive.google.com/file/d/14RdLzgRPRo06R66ldMHjRzN2pFT-GUmL/view" class="achievement-button" target="_blank">View Certificate</a>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7274645213573169155/" class="achievement-button" target="_blank">View LinkedIn Post</a>
+          </div>
+          <p><br>🏆 Secured a <strong>Top 5 position</strong> among <strong>110+ teams</strong> at the <strong>Stack Fusion Hackathon</strong>, <strong>Reva University</strong>, by developing an <strong>innovative solution</strong> that showcased <strong>technical expertise</strong>, <strong>problem-solving</strong>, and <strong>teamwork</strong>. This achievement reflects strong <strong>creativity</strong>, <strong>adaptability</strong>, and the ability to build <strong>impactful projects</strong> under intense <strong>competitive environments</strong> 🚀.</p>
+          <div class="achievement-buttons">
+            <a href="https://www.linkedin.com/posts/sandeep-reddy8_top5-hackathon-fullstack-activity-7317495512968876032-uZwF/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEb7KmwBmUtPwcTPDdmc4F4UzbhwyneTVSM" class="achievement-button" target="_blank">View LinkedIn Post</a>
+          </div>
         </section>
       </article>
 
@@ -330,97 +576,103 @@
           <h2 class="h2 article-title">Skills</h2>
         </header>
         <section class="skills">
-          <h3 class="h3 skills-title">Technical Skills</h3>
-          <ul class="skills-list content-card">
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Python</h5>
-                <data value="90">90%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
+          <h3 class="h3 skills-title">Languages</h3>
+          <ul class="skills-list">
+            <li class="skill-item">
+              <i class="fab fa-python skill-icon"></i>
+              <span class="skill-text">Python</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Machine Learning</h5>
-                <data value="85">85%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
-              </div>
+            <li class="skill-item">
+              <i class="fab fa-dart skill-icon"></i>
+              <span class="skill-text">Dart</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Computer Vision</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
+            <li class="skill-item">
+              <i class="fas fa-database skill-icon"></i>
+              <span class="skill-text">SQL</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Flask</h5>
-                <data value="75">75%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
+          </ul>
+          <h3 class="h3 skills-title">Technologies</h3>
+          <ul class="skills-list">
+            <li class="skill-item">
+              <i class="fas fa-brain skill-icon"></i>
+              <span class="skill-text">Machine Learning</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">TensorFlow</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
+            <li class="skill-item">
+              <i class="fas fa-network-wired skill-icon"></i>
+              <span class="skill-text">Neural Networks</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">C</h5>
-                <data value="65">65%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 65%;"></div>
-              </div>
+            <li class="skill-item">
+              <i class="fas fa-eye skill-icon"></i>
+              <span class="skill-text">Computer Vision</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Dart</h5>
-                <data value="70">70%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
+            <li class="skill-item">
+              <i class="fas fa-layer-group skill-icon"></i>
+              <span class="skill-text">U-Net</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Neural Networks</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
+            <li class="skill-item">
+              <i class="fab fa-html5 skill-icon"></i>
+              <span class="skill-text">HTML</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Flutter</h5>
-                <data value="75">75%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
+            <li class="skill-item">
+              <i class="fas fa-brain skill-icon"></i>
+              <span class="skill-text">Deep Learning</span>
             </li>
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">SQL</h5>
-                <data value="70">70%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
+            <li class="skill-item">
+              <i class="fas fa-robot skill-icon"></i>
+              <span class="skill-text">LLMs</span>
+            </li>
+          </ul>
+          <h3 class="h3 skills-title">Frameworks</h3>
+          <ul class="skills-list">
+            <li class="skill-item">
+              <i class="fab fa-flutter skill-icon"></i>
+              <span class="skill-text">Flutter</span>
+            </li>
+            <li class="skill-item">
+              <i class="fas fa-microchip skill-icon"></i>
+              <span class="skill-text">TensorFlow</span>
+            </li>
+            <li class="skill-item">
+              <i class="fas fa-fire skill-icon"></i>
+              <span class="skill-text">PyTorch</span>
+            </li>
+          </ul>
+          <h3 class="h3 skills-title">Databases</h3>
+          <ul class="skills-list">
+            <li class="skill-item">
+              <i class="fas fa-database skill-icon"></i>
+              <span class="skill-text">MySQL</span>
+            </li>
+            <li class="skill-item">
+              <i class="fas fa-fire-alt skill-icon"></i>
+              <span class="skill-text">Firebase</span>
+            </li>
+          </ul>
+          <h3 class="h3 skills-title">Tools & IDEs</h3>
+          <ul class="skills-list">
+            <li class="skill-item">
+              <i class="fas fa-code-branch skill-icon"></i>
+              <span class="skill-text">Git</span>
+            </li>
+            <li class="skill-item">
+              <i class="fab fa-github skill-icon"></i>
+              <span class="skill-text">GitHub</span>
+            </li>
+            <li class="skill-item">
+              <i class="fas fa-code skill-icon"></i>
+              <span class="skill-text">VS Code</span>
+            </li>
+            <li class="skill-item">
+              <i class="fas fa-file-code skill-icon"></i>
+              <span class="skill-text">Notepad++</span>
+            </li>
+            <li class="skill-item">
+              <i class="fas fa-cloud skill-icon"></i>
+              <span class="skill-text">Google Colab</span>
+            </li>
+            <li class="skill-item">
+              <i class="fas fa-table skill-icon"></i>
+              <span class="skill-text">Microsoft Excel</span>
             </li>
           </ul>
         </section>
@@ -432,7 +684,7 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
         <section class="contact-info">
-          <h3 class="h3 contact-title">Contact Me</h3>
+          <h3 class="h3 contact-title">Connect With Me</h3>
           <ul class="contacts-list">
             <li class="contact-item">
               <div class="icon-box">
@@ -470,7 +722,7 @@
               </a>
             </li>
             <li class="social-item">
-              <a href="https://www.linkedin.com/in/sandeep-reddy-k-35099a292/" class="social-link" target="_blank">
+              <a href="https://www.linkedin.com/in/sandeep-reddy8/" class="social-link" target="_blank">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
@@ -486,6 +738,38 @@
   <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- slideshow and popup script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Slideshow functionality
+      const slideshows = document.querySelectorAll('.slideshow-container');
+      slideshows.forEach(slideshow => {
+        const images = slideshow.querySelectorAll('.slideshow-image');
+        let currentIndex = 0;
+
+        function showNextImage() {
+          images[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % images.length;
+          images[currentIndex].classList.add('active');
+        }
+
+        // Initialize first image
+        images[0].classList.add('active');
+        // Change image every 3 seconds
+        setInterval(showNextImage, 3000);
+      });
+
+      // Popup functionality
+      window.showPopup = function(popupId) {
+        document.getElementById(`${popupId}-popup`).style.display = 'flex';
+      };
+
+      window.closePopup = function(popupId) {
+        document.getElementById(`${popupId}-popup`).style.display = 'none';
+      };
+    });
+  </script>
 </body>
 
 </html>

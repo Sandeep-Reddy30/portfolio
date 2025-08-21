@@ -263,10 +263,15 @@ main {
   gap: 15px;
 }
 
-.avatar-box {
-  background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+.avatar-box img {
+  width: 100px;            /* keep your chosen size */
+  height: 140px;           /* make sure it's equal to width */
+  border-radius: 40%;     /* makes it circular */
+  object-fit: cover;      /* ensures it fills the circle without distortion */
+  border: 0.5px solid #fff; /* optional - white border around */
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.2); /* optional - shadow */
 }
+
 
 .info-content .name {
   color: var(--white-2);
